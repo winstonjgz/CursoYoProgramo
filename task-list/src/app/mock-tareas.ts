@@ -1,4 +1,4 @@
-import {Tareas} from "./components/Tareas"
+import {Tareas} from "../app/Tareas"
 
 export const TAREAS: Tareas[] = [
     {
@@ -6,20 +6,20 @@ export const TAREAS: Tareas[] = [
         text: "Finalizar modulo de Angular",
         day: "30/03/2022",
         reminder: true
-    }
+    },
     {
         id:2, 
         text: "  informacion sobre Bootstrap",
         day: "01/04/2022",
         reminder: false
-    }
+    },
 
     {
         id:3, 
         text: "Realizar el primer borrador de Angular",
         day: "02/04/2022",
         reminder: true
-    }
+    },
 
     {
         id:4, 
