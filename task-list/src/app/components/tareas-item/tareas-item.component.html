@@ -1,6 +1,13 @@
 <!-- <p>tareas-item works!</p> -->
 <div class="tareas">
-    <h3>{{tareas.text}}<fa-icon [icon]="faTimes"></fa-icon></h3>
-    <p>{{tareas.day}}</p>
+    <h3>{{tareas.text}}
+        <fa-icon
+        [icon]="faTimes"
+        [ngStyle]=" {'color':'red'}"
+        ></fa-icon>
+    </h3>
+    <p>
+        {{tareas.day}}
+    </p>
 
 </div>
