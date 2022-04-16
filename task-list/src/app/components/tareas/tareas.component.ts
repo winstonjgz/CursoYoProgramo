@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Tareas } from 'src/app/Tareas';
 import { TAREAS } from 'src/app/mock-tareas';
+import {faTimes} from '@fortawesome/free-solid-svg-icons';
+
+
 
 
 @Component({
@@ -11,6 +14,8 @@ import { TAREAS } from 'src/app/mock-tareas';
 export class TareasComponent implements OnInit {
   // tareas: Tareas[] = TAREAS;
   tareas1: Tareas[] = TAREAS;
+  faTimes = faTimes;
+
 
   constructor() { }
 
