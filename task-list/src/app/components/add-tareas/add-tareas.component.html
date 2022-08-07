@@ -1,0 +1,35 @@
+<form 
+    class="add-form" 
+    (ngSubmit)="onSubmit()"
+    *ngIf="showAddTask"
+    >
+    <div class="form-control">
+        <label for="text" > Tarea </label>
+        <input type="text" 
+        name="text" 
+        id="text" 
+        placeholder="agrega texto"
+        [(ngModel)]="text"
+        />
+    
+    </div>
+
+    <div class="form-control">
+        <label for="day" > Fecha </label>
+        <input type="text" name="day" id="day" placeholder="agrega fecha y hora"
+        [(ngModel)]="day"
+        />
+    
+    </div>
+
+    <div class="form-control">
+        <label for="text" > Reminder </label>
+        <input type="checkbox" name="reminder" id="reminder" 
+        [(ngModel)]="reminder"
+        />
+    
+    </div>
+    <!-- {{text}} Se utiliza la doble llave para verificar que se este pasando el texto-->
+
+    <input type="submit" value="Guardar tarea" class="btn btn-block">
+</form>

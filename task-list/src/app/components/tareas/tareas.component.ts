@@ -12,6 +12,7 @@ import {faTimes} from '@fortawesome/free-solid-svg-icons';
   templateUrl: './tareas.component.html',
   styleUrls: ['./tareas.component.css']
 })
+
 export class TareasComponent implements OnInit {
   // tareas: Tareas[] = TAREAS;
   tareas: Tareas[] = [];
@@ -30,6 +31,31 @@ export class TareasComponent implements OnInit {
       this.tareas=tareas
       )
 
+
   }
 
+  deleteTarea(tareas:Tareas){
+    /* this.tareasService.deleteTarea(tareas)
+    .subscribe(
+      =>
+      this.tareas = this.tareas.filter( (t) =>{
+        return t.id !==tareas.id
+      })
+    ) */
+      console.log("revisar el borrado")
+  }
+
+  toggleReminder(tareas: Tareas){
+    tareas.reminder=!tareas.reminder
+    // console.log(tareas)
+    this.tareasService.updateTareaReminder(tareas).subscribe();
+
+
+
+  }
+
+  addTask(tareas:Tareas){
+    this.tareasService.addTask(tareas).subscribe( tareas=>
+      this.tareas.push( tareas ) )
+  }
 }

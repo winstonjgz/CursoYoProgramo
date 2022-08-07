@@ -1,9 +1,13 @@
 <!-- <p>tareas-item works!</p> -->
-<div class="tareas">
+<div class="tareas"
+[ngClass]="{reminder: tareas.reminder}"
+(click)="onToggle(tareas)"
+>
     <h3>{{tareas.text}}
         <fa-icon
         [icon]="faTimes"
         [ngStyle]=" {'color':'red'}"
+        (click)= "onDelete(tareas)"> 
         ></fa-icon>
     </h3>
     <p>

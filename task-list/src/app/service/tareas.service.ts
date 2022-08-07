@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHandler} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpHandler} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 
-import { Tareas } from 'src/app/Tareas';
-// import { TAREAS } from 'src/app/mock-tareas';
+import { Tareas } from '../Tareas';
+import { TAREAS } from '../mock-tareas';
+
+const httpOptions = {
+  headers: new HttpHeaders
+    ({'Content-Type':'apllication/json'})
+}
 
 
 @Injectable({
@@ -24,4 +29,25 @@ export class TareasService {
     return this.http.get<Tareas[]>(this.apiURL)
 
   }
+
+  deleteTarea(tareas: Tareas): Observable<Tareas>{
+    const url= `${this.apiURL}/${tareas.id}`
+    return this.http.delete<Tareas>(url)
+
+  }
+
+
+  updateTareaReminder(tareas: Tareas): Observable<Tareas>{
+    const url= `${this.apiURL}/${tareas.id}`
+    return this.http.put<Tareas>(url, tareas, httpOptions)
+
+  }
+
+  addTask(tareas:Tareas):Observable<Tareas>{
+    
+    return this.http.post<Tareas>(this.apiURL, tareas, httpOptions)
+
+  }
+
+
 }
